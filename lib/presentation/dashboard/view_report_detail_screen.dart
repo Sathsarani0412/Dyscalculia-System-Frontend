@@ -53,18 +53,25 @@ class _ViewReportDetailScreenState extends State<ViewReportDetailScreen> {
           dysRisk = data["dyscalculia_risk"];
 
           // Show Not Yet Tested if Activity 10–13 not done
-          final memoryActivitiesDone = activities
-              .any((a) => a["activity_id"] >= 10 && a["activity_id"] <= 13);
+         bool has10 = activities.any((a) => a["activity_id"] == 10);
+         bool has11 = activities.any((a) => a["activity_id"] == 11);
+         bool has12 = activities.any((a) => a["activity_id"] == 12);
+         bool has13 = activities.any((a) => a["activity_id"] == 13);
 
-          attentionStatus = memoryActivitiesDone
-              ? data["attention_status"]
-              : "Not Yet Tested";
+// Attention requires 10 & 11
+bool attentionDone = has10 && has11;
 
-          memoryStatus = memoryActivitiesDone
-              ? data["memory_status"]
-              : "Not Yet Tested";
+// Memory requires 12 & 13
+bool memoryDone = has12 && has13;
 
-          attentionMemoryDone = memoryActivitiesDone;
+attentionStatus =
+    attentionDone ? data["attention_result"] : "Not Yet Tested";
+
+memoryStatus =
+    memoryDone ? data["memory_result"] : "Not Yet Tested";
+
+// Used for Recommend button
+attentionMemoryDone = attentionDone && memoryDone;
 
           isLoading = false;
         });
@@ -168,7 +175,7 @@ class _ViewReportDetailScreenState extends State<ViewReportDetailScreen> {
                   ...statusActivities.map((a) => ListTile(
                         title: Text("Activity ${a['activity_id']}"),
                         subtitle: Text(
-                          "Status Level: ${a['result']}",
+                          a["is_correct"] == 1 ? "Correct" : "Wrong",
                         ),
                         contentPadding: EdgeInsets.zero,
                       )),
@@ -179,7 +186,7 @@ class _ViewReportDetailScreenState extends State<ViewReportDetailScreen> {
                   ...memoryActivities.map((a) => ListTile(
                         title: Text("Activity ${a['activity_id']}"),
                         subtitle: Text(
-                          "Memory Attention Level: ${a['result']}",
+                           a["is_correct"] == 1 ? "Correct" : "Wrong",
                         ),
                         contentPadding: EdgeInsets.zero,
                       )),
@@ -321,24 +328,29 @@ class _ViewReportDetailScreenState extends State<ViewReportDetailScreen> {
   }
 
   // ---------------- STATUS WIDGETS ----------------
-  Widget _dyscalculiaStatus() {
-    if (dysRisk == "High Risk") {
-      return _statusDisplay(
-        Colors.red,
-        "High Dyscalculia Risk\nYour child needs intervention",
-      );
-    }
-    if (dysRisk == "Mild Risk") {
-      return _statusDisplay(
-        Colors.orange,
-        "Mild Dyscalculia Risk\nRecommended activities",
-      );
-    }
+ Widget _dyscalculiaStatus() {
+
+  final risk = dysRisk?.toLowerCase().trim();
+
+  if (risk == "high" || risk == "high risk") {
     return _statusDisplay(
-      Colors.green,
-      "No Dyscalculia Risk\nYour child is doing well",
+      Colors.red,
+      "High Dyscalculia Risk\nYour child needs intervention",
     );
   }
+
+  if (risk == "mild" || risk == "mild risk") {
+    return _statusDisplay(
+      Colors.orange,
+      "Mild Dyscalculia Risk\nRecommended activities",
+    );
+  }
+
+  return _statusDisplay(
+    Colors.green,
+    "No Dyscalculia Risk\nYour child is doing well",
+  );
+}
 
   Widget _attentionStatus() {
     if (attentionStatus == "Attention Impairment") {
