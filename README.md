@@ -2,9 +2,6 @@
 # dyscaculia_project
 
 A new Flutter project.
-<img width="419" height="919" alt="A1" src="https://github.com/user-attachments/assets/cbcb96af-f254-4594-bb24-10f62ff08371" />
-
-<img width="419" height="919" alt="A2" src="https://github.com/user-attachments/assets/c98f5d7c-6a1c-4afd-af7b-7944f81c45ac" />
 
 ## Getting Started
 
@@ -19,6 +16,18 @@ For help getting started with Flutter development, view the
 [online documentation](https://docs.flutter.dev/), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
 =======
+<img width="300" height="300" alt="A1" src="https://github.com/user-attachments/assets/4bca2191-5902-4675-b7e9-bc8434de7983" />
+
+<img width="300" height="300" alt="A2" src="https://github.com/user-attachments/assets/6dcd1885-2e13-44f0-b4f9-bf92f873c512" />
+<img width="300" height="300" alt="A3" src="https://github.com/user-attachments/assets/f4af7ae2-868b-4878-9585-096508c3ac5c" />
+<img width="300" height="300" alt="A5" src="https://github.com/user-attachments/assets/361c2ee7-992d-42bb-97fe-7b1ed33941e1" />
+<img width="300" height="300" alt="A7" src="https://github.com/user-attachments/assets/09e7c201-f8e5-4756-a641-a0fb9c8e8919" />
+
+
+
+
+
+
 # Dyscalculia-Detection-System-Frontend
 A Flutter-based mobile app for early detection of dyscalculia in children using activity-based assessments (Activity 1–13). Parents can manage multiple child profiles, view reports, and receive recommendations for attention and memory improvement. Built with Flutter, SQLite, and Flask API.
 >>>>>>> 9a8d447c7de8b8d7208d86c157b30ab9753d6ea6
