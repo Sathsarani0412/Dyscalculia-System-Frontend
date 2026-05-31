@@ -34,7 +34,7 @@ class _ViewReportSelectScreenState extends State<ViewReportSelectScreen> {
 
 final response = await http.get(
   Uri.parse(
-    "http://10.0.2.2:5000/children/$encodedEmail",
+     "https://dyscalculia-api-production.up.railway.app/children/${Uri.encodeComponent(encodedEmail)}",
   ),
 );
 

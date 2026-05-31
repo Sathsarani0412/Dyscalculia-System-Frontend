@@ -41,14 +41,17 @@ class _LoginScreenState extends State<LoginScreen> {
     });
 
     try {
-      final response = await http.post(
-        Uri.parse("http://10.0.2.2:5000/login"), // Android Emulator
-        headers: {"Content-Type": "application/json"},
-        body: jsonEncode({
-          "email": email,
-          "password": password,
-        }),
-      );
+  final response = await http.post(
+    Uri.parse("https://dyscalculia-api-production.up.railway.app/login"),
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: jsonEncode({
+      "email": email,
+      "password": password,
+    }),
+  );
+      
 
       final data = jsonDecode(response.body);
 

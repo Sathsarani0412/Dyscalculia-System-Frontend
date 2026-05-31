@@ -60,7 +60,7 @@ class _SignupScreenState extends State<SignupScreen> {
 
     try {
       final response = await http.post(
-        Uri.parse("http://10.0.2.2:5000/signup"),
+        Uri.parse("https://dyscalculia-api-production.up.railway.app/signup"),
         headers: {"Content-Type": "application/json"},
         body: jsonEncode({
           "email": email,

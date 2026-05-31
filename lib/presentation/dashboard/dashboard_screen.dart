@@ -29,7 +29,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
 
     try {
       final response = await http.get(
-        Uri.parse("http://10.0.2.2:5000/children/${widget.userName}"),
+        Uri.parse("https://dyscalculia-api-production.up.railway.app/children/${widget.userName}")
       );
 
       if (response.statusCode == 200) {

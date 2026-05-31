@@ -39,7 +39,7 @@ class _EditChildScreenState extends State<EditChildScreen> {
   try {
     final response = await http.get(
       Uri.parse(
-        "http://10.0.2.2:5000/child/${Uri.encodeComponent(originalChildName)}",
+        "https://dyscalculia-api-production.up.railway.app/child/${Uri.encodeComponent(originalChildName)}",
       ),
     );
 
@@ -77,7 +77,7 @@ class _EditChildScreenState extends State<EditChildScreen> {
 
     try {
       final response = await http.put(
-        Uri.parse("http://10.0.2.2:5000/update-child"),
+        Uri.parse("https://dyscalculia-api-production.up.railway.app/update-child"),
         headers: {"Content-Type": "application/json"},
         body: jsonEncode({
           "old_name": originalChildName,

@@ -33,7 +33,7 @@ class _Activity5State extends State<Activity5> {
 
     try {
       await http.post(
-        Uri.parse("http://10.0.2.2:5000/save-activity"),
+        Uri.parse("https://dyscalculia-api-production.up.railway.app/save-activity"),
         headers: {"Content-Type": "application/json"},
         body: jsonEncode({
           "child_name": childName,

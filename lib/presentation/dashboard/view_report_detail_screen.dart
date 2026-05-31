@@ -39,7 +39,7 @@ class _ViewReportDetailScreenState extends State<ViewReportDetailScreen> {
     try {
       final response = await http.get(
         Uri.parse(
-          "http://10.0.2.2:5000/view-report/${widget.childName}",
+          "https://dyscalculia-api-production.up.railway.app/view-report/${Uri.encodeComponent(widget.childName)}",
         ),
       );
 

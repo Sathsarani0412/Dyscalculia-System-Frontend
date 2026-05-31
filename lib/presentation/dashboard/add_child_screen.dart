@@ -253,7 +253,7 @@ class _AddChildScreenState extends State<AddChildScreen> {
 
     try {
       final response = await http.post(
-        Uri.parse("http://10.0.2.2:5000/add-child"),
+        Uri.parse("https://dyscalculia-api-production.up.railway.app/add-child"),
         headers: {"Content-Type": "application/json"},
         body: jsonEncode({
           "email": email,

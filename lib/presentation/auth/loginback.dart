@@ -35,7 +35,7 @@ class _LoginBackScreenState extends State<LoginBackScreen> {
 
     try {
       final response = await http.post(
-        Uri.parse("http://10.0.2.2:5000/login"),
+       Uri.parse("https://dyscalculia-api-production.up.railway.app/login"),
         headers: {"Content-Type": "application/json"},
         body: jsonEncode({
           "email": email,
