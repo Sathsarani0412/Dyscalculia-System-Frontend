@@ -2,6 +2,9 @@
 # dyscaculia_project
 
 A new Flutter project.
+<img width="419" height="919" alt="A1" src="https://github.com/user-attachments/assets/cbcb96af-f254-4594-bb24-10f62ff08371" />
+
+<img width="419" height="919" alt="A2" src="https://github.com/user-attachments/assets/c98f5d7c-6a1c-4afd-af7b-7944f81c45ac" />
 
 ## Getting Started
 
